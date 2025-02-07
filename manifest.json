@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "The Very Hungry Caterpillar",
+    "version": "1.0",
+    "description": "I'm going to be a beautiful butterfly~",
+    // "icons": {
+    //   "16": "images/icon.png",
+    //   "32": "images/icon.png",
+    //   "48": "images/icon.png",
+    //   "128": "images/icon.png"
+    // },
+    "content_scripts": [
+      {
+        "js": ["script/content.js"],
+        "matches": [
+          "https://developer.chrome.com/docs/extensions/*",
+          "https://developer.chrome.com/docs/webstore/*"
+        ]
+      }
+    ]
+}
