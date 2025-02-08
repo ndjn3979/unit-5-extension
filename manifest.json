@@ -3,19 +3,14 @@
     "name": "The Very Hungry Caterpillar",
     "version": "1.0",
     "description": "I'm going to be a beautiful butterfly~",
-    // "icons": {
-    //   "16": "images/icon.png",
-    //   "32": "images/icon.png",
-    //   "48": "images/icon.png",
-    //   "128": "images/icon.png"
-    // },
+    "permissions": ["activeTab", "scripting"], // Allows running scripts on commercial sites.
+    "host_permissions": ["<all_urls>"], // Grants access to all websites.
     "content_scripts": [
       {
         "js": ["script/content.js"],
-        "matches": [
-          "https://developer.chrome.com/docs/extensions/*",
-          "https://developer.chrome.com/docs/webstore/*"
-        ]
+        "matches": ["<all_urls>"], // makes sure it runs on all web pages.
+        "run_at": "document_end" // ensures the script loads after the DOM is ready.
       }
-    ]
+    ],
+    "action": {} 
 }
